@@ -2,19 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Avva\Newsletter\Resource;
+namespace Mgsoft\Flow\Resource;
 
-use Avva\Newsletter\Http\Transport;
-use Avva\Newsletter\Model\MailingList;
+use Mgsoft\Flow\Http\Transport;
+use Mgsoft\Flow\Model\MailingList;
 
 /**
  * Mailing list operations.
  */
 final class Lists
 {
-    public function __construct(private readonly Transport $transport)
-    {
-    }
+    public function __construct(private readonly Transport $transport) {}
 
     /**
      * List every mailing list in the account.

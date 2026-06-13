@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Avva\Newsletter\Model;
+namespace Mgsoft\Flow\Model;
 
 use ArrayIterator;
 use Countable;
@@ -28,8 +28,7 @@ final class Page implements Countable, IteratorAggregate
         public readonly int $lastPage,
         public readonly int $perPage,
         public readonly int $total,
-    ) {
-    }
+    ) {}
 
     /**
      * Build a page from decoded data items and the `meta` envelope block.

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Avva\Newsletter\Model;
+namespace Mgsoft\Flow\Model;
 
 /**
  * Lightweight DTO base. Each model is hydrated from the decoded `data` payload
@@ -14,9 +14,7 @@ abstract class Model
     /**
      * @param  array<string, mixed>  $attributes
      */
-    public function __construct(public readonly array $attributes = [])
-    {
-    }
+    public function __construct(public readonly array $attributes = []) {}
 
     /**
      * Hydrate the model from a decoded `data` array.

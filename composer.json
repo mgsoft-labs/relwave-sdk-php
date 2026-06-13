@@ -1,21 +1,21 @@
 {
-    "name": "avva/newsletter-php",
-    "description": "Official PHP SDK for the Newsletter /api/v1 transactional and audience API.",
+    "name": "mgsoft/flow-php",
+    "description": "Official PHP SDK for the MGSoft Flow /api/v1 transactional and audience API.",
     "type": "library",
     "keywords": [
-        "newsletter",
+        "mgsoft",
+        "flow",
         "email",
         "transactional",
         "api",
-        "sdk",
-        "avva"
+        "sdk"
     ],
-    "homepage": "https://github.com/avva/newsletter-php",
+    "homepage": "https://github.com/mgsoft/flow-php",
     "license": "MIT",
     "authors": [
         {
-            "name": "Avva",
-            "homepage": "https://avva.com.tr"
+            "name": "MGSoft",
+            "homepage": "https://mgsoft.com.tr"
         }
     ],
     "require": {
@@ -34,12 +34,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Avva\\Newsletter\\": "src/"
+            "Mgsoft\\Flow\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Avva\\Newsletter\\Tests\\": "tests/"
+            "Mgsoft\\Flow\\Tests\\": "tests/"
         }
     },
     "config": {

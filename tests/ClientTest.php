@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Avva\Newsletter\Tests;
+namespace Mgsoft\Flow\Tests;
 
-use Avva\Newsletter\Client;
-use Avva\Newsletter\Exception\ApiException;
-use Avva\Newsletter\Exception\RateLimitException;
-use Avva\Newsletter\Model\Message;
-use Avva\Newsletter\Model\Page;
-use Avva\Newsletter\Model\Subscriber;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use Mgsoft\Flow\Client;
+use Mgsoft\Flow\Exception\ApiException;
+use Mgsoft\Flow\Exception\RateLimitException;
+use Mgsoft\Flow\Model\Message;
+use Mgsoft\Flow\Model\Page;
+use Mgsoft\Flow\Model\Subscriber;
 use PHPUnit\Framework\TestCase;
 
 final class ClientTest extends TestCase
@@ -28,7 +28,7 @@ final class ClientTest extends TestCase
     protected function setUp(): void
     {
         $this->history = [];
-        $this->mock = new MockHandler();
+        $this->mock = new MockHandler;
     }
 
     public function test_it_sends_a_transactional_message(): void

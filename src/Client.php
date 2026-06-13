@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Avva\Newsletter;
+namespace Mgsoft\Flow;
 
-use Avva\Newsletter\Http\Transport;
-use Avva\Newsletter\Resource\Campaigns;
-use Avva\Newsletter\Resource\Lists;
-use Avva\Newsletter\Resource\Messages;
-use Avva\Newsletter\Resource\Subscribers;
+use Mgsoft\Flow\Http\Transport;
+use Mgsoft\Flow\Resource\Campaigns;
+use Mgsoft\Flow\Resource\Lists;
+use Mgsoft\Flow\Resource\Messages;
+use Mgsoft\Flow\Resource\Subscribers;
 use Psr\Http\Client\ClientInterface;
 
 /**
- * Entry point for the Newsletter /api/v1 SDK.
+ * Entry point for the MGSoft Flow /api/v1 SDK.
  *
  * ```php
- * $client = new \Avva\Newsletter\Client('nl_live_xxxxx.secret');
+ * $client = new \Mgsoft\Flow\Client('nl_live_xxxxx.secret');
  *
  * $message = $client->messages->send([
  *     'to'      => 'jane@example.com',

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Avva\Newsletter\Model;
+namespace Mgsoft\Flow\Model;
 
 /**
  * A mailing list (audience segment container).

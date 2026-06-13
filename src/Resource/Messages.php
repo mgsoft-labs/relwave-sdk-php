@@ -2,19 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Avva\Newsletter\Resource;
+namespace Mgsoft\Flow\Resource;
 
-use Avva\Newsletter\Http\Transport;
-use Avva\Newsletter\Model\Message;
+use Mgsoft\Flow\Http\Transport;
+use Mgsoft\Flow\Model\Message;
 
 /**
  * Transactional message operations.
  */
 final class Messages
 {
-    public function __construct(private readonly Transport $transport)
-    {
-    }
+    public function __construct(private readonly Transport $transport) {}
 
     /**
      * Send a single transactional message. At least one of `html` / `text`

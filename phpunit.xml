@@ -7,7 +7,7 @@
          failOnWarning="true"
          failOnRisky="true">
     <testsuites>
-        <testsuite name="Newsletter SDK">
+        <testsuite name="MGSoft Flow SDK">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

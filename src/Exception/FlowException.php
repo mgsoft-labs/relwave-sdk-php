@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Avva\Newsletter\Exception;
+namespace Mgsoft\Flow\Exception;
 
 use Exception;
 
@@ -12,6 +12,4 @@ use Exception;
  * Catch this when you want to handle any SDK failure (network problems,
  * malformed responses, or API errors) with a single block.
  */
-class NewsletterException extends Exception
-{
-}
+class FlowException extends Exception {}

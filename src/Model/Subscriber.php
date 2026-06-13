@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Avva\Newsletter\Model;
+namespace Mgsoft\Flow\Model;
 
 /**
  * A subscriber in an account's audience.

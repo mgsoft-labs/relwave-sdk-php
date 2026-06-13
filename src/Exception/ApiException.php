@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Avva\Newsletter\Exception;
+namespace Mgsoft\Flow\Exception;
 
 use Throwable;
 
@@ -10,14 +10,14 @@ use Throwable;
  * Thrown whenever the API returns an HTTP status >= 400 or a non-empty
  * `errors` envelope.
  *
- * The typed payload mirrors the Newsletter `{ data, meta, errors }` contract:
+ * The typed payload mirrors the MGSoft Flow `{ data, meta, errors }` contract:
  *
  *  - {@see ApiException::getStatusCode()}  HTTP status code (401, 403, 404, 422, 429, ...).
  *  - {@see ApiException::getErrors()}      Validation/runtime error map: `field => string[]`.
  *  - {@see ApiException::getMeta()}        Any `meta` returned alongside the error.
  *  - {@see ApiException::getRetryAfter()}  Seconds to wait, populated on 429 responses.
  */
-class ApiException extends NewsletterException
+class ApiException extends FlowException
 {
     /**
      * @param  array<string, array<int, string>>  $errors
@@ -41,7 +41,6 @@ class ApiException extends NewsletterException
      * {@see RateLimitException} are instantiated for their own status codes.
      *
      * @param  array<string, mixed>  $envelope
-     * @return static
      */
     public static function fromEnvelope(int $statusCode, array $envelope, ?int $retryAfter = null): static
     {

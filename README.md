@@ -1,6 +1,6 @@
-# Newsletter PHP SDK
+# MGSoft Flow PHP SDK
 
-Official PHP client for the **Newsletter** `/api/v1` transactional and audience
+Official PHP client for the **MGSoft Flow** `/api/v1` transactional and audience
 API. Typed models, a single response envelope (`{ data, meta, errors }`), typed
 exceptions, idempotency, and rate-limit handling out of the box.
 
@@ -12,7 +12,7 @@ exceptions, idempotency, and rate-limit handling out of the box.
 > **Yakında.** Paket henüz Packagist'e yayınlanmadı; aşağıdaki komut yayın sonrası geçerli olacak. O zamana kadar repoyu bir `path`/`vcs` repository olarak ekleyerek kullanabilirsiniz.
 
 ```bash
-composer require avva/newsletter-php
+composer require mgsoft/flow-php
 ```
 
 ## Quick start
@@ -22,7 +22,7 @@ prefixed with `nl_test_` target the **sandbox** (accepted and echoed back
 without real delivery).
 
 ```php
-use Avva\Newsletter\Client;
+use Mgsoft\Flow\Client;
 
 $client = new Client(
     apiKey: 'nl_live_abcde.secret',
@@ -127,8 +127,8 @@ Any HTTP status `>= 400` — or a non-empty `errors` envelope — throws a typed
 `ApiException` carrying the status code and the `field => string[]` error map.
 
 ```php
-use Avva\Newsletter\Exception\ApiException;
-use Avva\Newsletter\Exception\RateLimitException;
+use Mgsoft\Flow\Exception\ApiException;
+use Mgsoft\Flow\Exception\RateLimitException;
 
 try {
     $client->messages->send([
@@ -152,10 +152,10 @@ Exception hierarchy:
 
 | Exception | Thrown when |
 | --- | --- |
-| `Avva\Newsletter\Exception\NewsletterException` | Base type for every SDK error. |
-| `Avva\Newsletter\Exception\ApiException` | HTTP `>= 400` or non-empty `errors`. Carries status, errors, meta, retryAfter. |
-| `Avva\Newsletter\Exception\RateLimitException` | HTTP `429` (subclass of `ApiException`). `getRetryAfter()` is populated. |
-| `Avva\Newsletter\Exception\TransportException` | Network failure or undecodable response (no HTTP envelope). |
+| `Mgsoft\Flow\Exception\FlowException` | Base type for every SDK error. |
+| `Mgsoft\Flow\Exception\ApiException` | HTTP `>= 400` or non-empty `errors`. Carries status, errors, meta, retryAfter. |
+| `Mgsoft\Flow\Exception\RateLimitException` | HTTP `429` (subclass of `ApiException`). `getRetryAfter()` is populated. |
+| `Mgsoft\Flow\Exception\TransportException` | Network failure or undecodable response (no HTTP envelope). |
 
 `RateLimitException` extends `ApiException`, so a single `catch (ApiException)`
 handles everything; catch `RateLimitException` first when you want bespoke

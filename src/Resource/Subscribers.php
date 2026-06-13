@@ -2,20 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Avva\Newsletter\Resource;
+namespace Mgsoft\Flow\Resource;
 
-use Avva\Newsletter\Http\Transport;
-use Avva\Newsletter\Model\Page;
-use Avva\Newsletter\Model\Subscriber;
+use Mgsoft\Flow\Http\Transport;
+use Mgsoft\Flow\Model\Page;
+use Mgsoft\Flow\Model\Subscriber;
 
 /**
  * Audience subscriber operations.
  */
 final class Subscribers
 {
-    public function __construct(private readonly Transport $transport)
-    {
-    }
+    public function __construct(private readonly Transport $transport) {}
 
     /**
      * List subscribers. Paginated.

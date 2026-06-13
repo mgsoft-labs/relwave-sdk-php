@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Avva\Newsletter\Http;
+namespace Mgsoft\Flow\Http;
 
-use Avva\Newsletter\Exception\ApiException;
-use Avva\Newsletter\Exception\RateLimitException;
-use Avva\Newsletter\Exception\TransportException;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Psr7\Request;
+use Mgsoft\Flow\Client;
+use Mgsoft\Flow\Exception\ApiException;
+use Mgsoft\Flow\Exception\RateLimitException;
+use Mgsoft\Flow\Exception\TransportException;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\ResponseInterface;
 use Throwable;
@@ -24,7 +25,7 @@ use Throwable;
  *  - translate HTTP >= 400 / non-empty `errors` into typed exceptions,
  *    surfacing 429 as a {@see RateLimitException} carrying `retryAfter`.
  *
- * @internal Consumers should use {@see \Avva\Newsletter\Client} instead.
+ * @internal Consumers should use {@see Client} instead.
  */
 final class Transport
 {
@@ -116,7 +117,7 @@ final class Transport
         try {
             return $this->http->sendRequest($request);
         } catch (ConnectException $e) {
-            throw new TransportException('Could not reach the Newsletter API: '.$e->getMessage(), 0, $e);
+            throw new TransportException('Could not reach the MGSoft Flow API: '.$e->getMessage(), 0, $e);
         } catch (Throwable $e) {
             throw new TransportException('HTTP request failed: '.$e->getMessage(), 0, $e);
         }
@@ -132,7 +133,7 @@ final class Transport
         $headers = [
             'Accept' => 'application/json',
             'Content-Type' => 'application/json',
-            'User-Agent' => $this->options['user_agent'] ?? ('avva-newsletter-php/'.self::VERSION),
+            'User-Agent' => $this->options['user_agent'] ?? ('mgsoft-flow-php/'.self::VERSION),
         ];
 
         if (strtolower($authHeader) === 'x-api-key') {
