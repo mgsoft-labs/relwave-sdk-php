@@ -1,0 +1,56 @@
+{
+    "name": "avva/newsletter-php",
+    "description": "Official PHP SDK for the Newsletter /api/v1 transactional and audience API.",
+    "type": "library",
+    "keywords": [
+        "newsletter",
+        "email",
+        "transactional",
+        "api",
+        "sdk",
+        "avva"
+    ],
+    "homepage": "https://github.com/avva/newsletter-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Avva",
+            "homepage": "https://avva.com.tr"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.5",
+        "psr/http-client": "^1.0",
+        "psr/http-message": "^1.1 || ^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0 || ^10.5",
+        "friendsofphp/php-cs-fixer": "^3.50"
+    },
+    "suggest": {
+        "ext-mbstring": "Improves handling of multibyte strings in request/response bodies."
+    },
+    "autoload": {
+        "psr-4": {
+            "Avva\\Newsletter\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Avva\\Newsletter\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "phpunit",
+        "cs": "php-cs-fixer fix",
+        "cs:check": "php-cs-fixer fix --dry-run --diff",
+        "lint": "@cs:check"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
