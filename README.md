@@ -55,6 +55,23 @@ Retrieve it later:
 $message = $client->messages->get(42);
 ```
 
+### Attachments and templates
+
+```php
+$client->messages->send([
+    'to'          => 'jane@example.com',
+    'subject'     => 'Your invoice',
+    'template_id' => 12, // the body fills the template's {{content}} slot
+    'markdown'    => 'Thanks for your order, **{{ first_name }}**.',
+    'variables'   => ['first_name' => 'Jane'],
+    'attachments' => [
+        ['filename' => 'invoice.pdf', 'content' => base64_encode(file_get_contents('invoice.pdf'))],
+    ],
+]);
+```
+
+Up to 10 files, 10 MB in total. Executable and script types are rejected.
+
 ### Create a subscriber
 
 `create()` upserts on (account, email). Status is one of

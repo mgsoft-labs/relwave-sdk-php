@@ -29,7 +29,10 @@ final class Messages
      *     stream_id?: int,
      *     variables?: array<string, scalar|null>,
      *     metadata?: array<string, mixed>,
-     *     tags?: array<int, string>
+     *     tags?: array<int, string>,
+     *     markdown?: string,
+     *     template_id?: int,
+     *     attachments?: array<int, array{filename: string, content: string, content_type?: string}>
      * }  $body
      */
     public function send(array $body, ?string $idempotencyKey = null): Message
