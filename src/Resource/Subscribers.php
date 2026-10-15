@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Mgsoft\Flow\Resource;
+namespace Relwave\Resource;
 
-use Mgsoft\Flow\Http\Transport;
-use Mgsoft\Flow\Model\Page;
-use Mgsoft\Flow\Model\Subscriber;
+use Relwave\Http\Transport;
+use Relwave\Model\Page;
+use Relwave\Model\Subscriber;
 
 /**
  * Audience subscriber operations.

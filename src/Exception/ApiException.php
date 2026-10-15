@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mgsoft\Flow\Exception;
+namespace Relwave\Exception;
 
 use Throwable;
 
@@ -10,14 +10,14 @@ use Throwable;
  * Thrown whenever the API returns an HTTP status >= 400 or a non-empty
  * `errors` envelope.
  *
- * The typed payload mirrors the MGSoft Flow `{ data, meta, errors }` contract:
+ * The typed payload mirrors the Relwave `{ data, meta, errors }` contract:
  *
  *  - {@see ApiException::getStatusCode()}  HTTP status code (401, 403, 404, 422, 429, ...).
  *  - {@see ApiException::getErrors()}      Validation/runtime error map: `field => string[]`.
  *  - {@see ApiException::getMeta()}        Any `meta` returned alongside the error.
  *  - {@see ApiException::getRetryAfter()}  Seconds to wait, populated on 429 responses.
  */
-class ApiException extends FlowException
+class ApiException extends RelwaveException
 {
     /**
      * @param  array<string, array<int, string>>  $errors

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mgsoft\Flow\Model;
+namespace Relwave\Model;
 
 use ArrayIterator;
 use Countable;

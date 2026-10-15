@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Mgsoft\Flow\Resource;
+namespace Relwave\Resource;
 
-use Mgsoft\Flow\Http\Transport;
-use Mgsoft\Flow\Model\Message;
+use Relwave\Http\Transport;
+use Relwave\Model\Message;
 
 /**
  * Transactional message operations.

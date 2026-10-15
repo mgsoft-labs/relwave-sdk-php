@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Mgsoft\Flow;
+namespace Relwave;
 
-use Mgsoft\Flow\Http\Transport;
-use Mgsoft\Flow\Resource\Campaigns;
-use Mgsoft\Flow\Resource\Lists;
-use Mgsoft\Flow\Resource\Messages;
-use Mgsoft\Flow\Resource\Subscribers;
 use Psr\Http\Client\ClientInterface;
+use Relwave\Http\Transport;
+use Relwave\Resource\Campaigns;
+use Relwave\Resource\Lists;
+use Relwave\Resource\Messages;
+use Relwave\Resource\Subscribers;
 
 /**
- * Entry point for the MGSoft Flow /api/v1 SDK.
+ * Entry point for the Relwave /api/v1 SDK.
  *
  * ```php
- * $client = new \Mgsoft\Flow\Client('nl_live_xxxxx.secret');
+ * $client = new \Relwave\Client('nl_live_xxxxx.secret');
  *
  * $message = $client->messages->send([
  *     'to'      => 'jane@example.com',

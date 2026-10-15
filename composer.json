@@ -1,21 +1,21 @@
 {
-    "name": "mgsoft/flow-php",
-    "description": "Official PHP SDK for the MGSoft Flow /api/v1 transactional and audience API.",
+    "name": "relwave/relwave-php",
+    "description": "Official PHP SDK for the Relwave /api/v1 transactional and audience API.",
     "type": "library",
     "keywords": [
         "mgsoft",
-        "flow",
+        "relwave",
         "email",
         "transactional",
         "api",
         "sdk"
     ],
-    "homepage": "https://github.com/mgsoft/flow-php",
+    "homepage": "https://relwave.com/docs/api",
     "license": "MIT",
     "authors": [
         {
             "name": "MGSoft",
-            "homepage": "https://mgsoft.com.tr"
+            "homepage": "https://relwave.com"
         }
     ],
     "require": {
@@ -34,12 +34,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Mgsoft\\Flow\\": "src/"
+            "Relwave\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Mgsoft\\Flow\\Tests\\": "tests/"
+            "Relwave\\Tests\\": "tests/"
         }
     },
     "config": {

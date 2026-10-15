@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mgsoft\Flow\Model;
+namespace Relwave\Model;
 
 /**
  * Lightweight DTO base. Each model is hydrated from the decoded `data` payload

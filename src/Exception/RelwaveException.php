@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mgsoft\Flow\Exception;
+namespace Relwave\Exception;
 
 use Exception;
 
@@ -12,4 +12,4 @@ use Exception;
  * Catch this when you want to handle any SDK failure (network problems,
  * malformed responses, or API errors) with a single block.
  */
-class FlowException extends Exception {}
+class RelwaveException extends Exception {}

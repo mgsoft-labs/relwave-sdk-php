@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mgsoft\Flow\Model;
+namespace Relwave\Model;
 
 /**
  * The message stream a transactional message was sent through.

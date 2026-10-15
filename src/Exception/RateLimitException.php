@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mgsoft\Flow\Exception;
+namespace Relwave\Exception;
 
 /**
  * Thrown specifically on HTTP 429 responses so callers can catch rate limits

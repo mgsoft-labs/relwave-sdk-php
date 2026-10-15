@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mgsoft\Flow\Tests;
+namespace Relwave\Tests;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Handler\MockHandler;
@@ -10,13 +10,13 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
-use Mgsoft\Flow\Client;
-use Mgsoft\Flow\Exception\ApiException;
-use Mgsoft\Flow\Exception\RateLimitException;
-use Mgsoft\Flow\Model\Message;
-use Mgsoft\Flow\Model\Page;
-use Mgsoft\Flow\Model\Subscriber;
 use PHPUnit\Framework\TestCase;
+use Relwave\Client;
+use Relwave\Exception\ApiException;
+use Relwave\Exception\RateLimitException;
+use Relwave\Model\Message;
+use Relwave\Model\Page;
+use Relwave\Model\Subscriber;
 
 final class ClientTest extends TestCase
 {

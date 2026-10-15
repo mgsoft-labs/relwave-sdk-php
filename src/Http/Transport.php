@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Mgsoft\Flow\Http;
+namespace Relwave\Http;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Psr7\Request;
-use Mgsoft\Flow\Client;
-use Mgsoft\Flow\Exception\ApiException;
-use Mgsoft\Flow\Exception\RateLimitException;
-use Mgsoft\Flow\Exception\TransportException;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\ResponseInterface;
+use Relwave\Client;
+use Relwave\Exception\ApiException;
+use Relwave\Exception\RateLimitException;
+use Relwave\Exception\TransportException;
 use Throwable;
 
 /**
@@ -117,7 +117,7 @@ final class Transport
         try {
             return $this->http->sendRequest($request);
         } catch (ConnectException $e) {
-            throw new TransportException('Could not reach the MGSoft Flow API: '.$e->getMessage(), 0, $e);
+            throw new TransportException('Could not reach the Relwave API: '.$e->getMessage(), 0, $e);
         } catch (Throwable $e) {
             throw new TransportException('HTTP request failed: '.$e->getMessage(), 0, $e);
         }
@@ -133,7 +133,7 @@ final class Transport
         $headers = [
             'Accept' => 'application/json',
             'Content-Type' => 'application/json',
-            'User-Agent' => $this->options['user_agent'] ?? ('mgsoft-flow-php/'.self::VERSION),
+            'User-Agent' => $this->options['user_agent'] ?? ('relwave-php/'.self::VERSION),
         ];
 
         if (strtolower($authHeader) === 'x-api-key') {
