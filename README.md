@@ -26,7 +26,7 @@ use Relwave\Client;
 
 $client = new Client(
     apiKey: 'nl_live_abcde.secret',
-    baseUrl: 'https://your-app.com/api/v1', // defaults to https://app.test/api/v1
+    baseUrl: 'https://your-app.com/api/v1', // defaults to https://relwave.com/api/v1
 );
 ```
 

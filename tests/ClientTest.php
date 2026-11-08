@@ -206,6 +206,24 @@ final class ClientTest extends TestCase
         $this->assertSame('', $request->getHeaderLine('Authorization'));
     }
 
+    public function test_it_returns_the_account_for_the_key(): void
+    {
+        $this->queue(200, ['data' => ['account' => ['slug' => 'acme', 'name' => 'Acme'], 'sandbox' => true], 'meta' => [], 'errors' => []]);
+
+        $me = $this->client()->me();
+
+        self::assertSame('GET', $this->history[0]['request']->getMethod());
+        self::assertStringEndsWith('/me', $this->history[0]['request']->getUri()->getPath());
+        self::assertSame('acme', $me->accountSlug);
+        self::assertSame('Acme', $me->accountName);
+        self::assertTrue($me->sandbox);
+    }
+
+    public function test_it_defaults_to_the_production_api(): void
+    {
+        self::assertSame('https://relwave.com/api/v1', Client::DEFAULT_BASE_URL);
+    }
+
     public function test_it_detects_sandbox_keys(): void
     {
         $sandbox = new Client('nl_test_abc.secret', 'https://app.test/api/v1', $this->guzzle());

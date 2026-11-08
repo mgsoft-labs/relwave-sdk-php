@@ -42,4 +42,12 @@ final class Subscriber extends Model
             attributes: $data,
         );
     }
+
+    /**
+     * Whether the subscriber was returned in sandbox mode (nothing stored).
+     */
+    public function isSandbox(): bool
+    {
+        return (bool) ($this->attributes['sandbox'] ?? false);
+    }
 }

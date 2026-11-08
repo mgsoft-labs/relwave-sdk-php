@@ -6,6 +6,7 @@ namespace Relwave;
 
 use Psr\Http\Client\ClientInterface;
 use Relwave\Http\Transport;
+use Relwave\Model\Me;
 use Relwave\Resource\Campaigns;
 use Relwave\Resource\Lists;
 use Relwave\Resource\Messages;
@@ -33,7 +34,7 @@ use Relwave\Resource\Subscribers;
  */
 final class Client
 {
-    public const DEFAULT_BASE_URL = 'https://app.test/api/v1';
+    public const DEFAULT_BASE_URL = 'https://relwave.com/api/v1';
 
     public readonly Subscribers $subscribers;
 
@@ -63,6 +64,16 @@ final class Client
         $this->lists = new Lists($this->transport);
         $this->campaigns = new Campaigns($this->transport);
         $this->messages = new Messages($this->transport);
+    }
+
+    /**
+     * The account that owns this API key; handy as a connection test.
+     */
+    public function me(): Me
+    {
+        $envelope = $this->transport->request('GET', 'me');
+
+        return Me::fromArray((array) $envelope['data']);
     }
 
     /**
