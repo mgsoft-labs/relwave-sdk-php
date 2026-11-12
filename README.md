@@ -9,8 +9,6 @@ exceptions, idempotency, and rate-limit handling out of the box.
 
 ## Installation
 
-> **Yakında.** Paket henüz Packagist'e yayınlanmadı; aşağıdaki komut yayın sonrası geçerli olacak. O zamana kadar repoyu bir `path`/`vcs` repository olarak ekleyerek kullanabilirsiniz.
-
 ```bash
 composer require relwave/relwave-php
 ```
